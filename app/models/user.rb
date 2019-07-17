@@ -1,0 +1,42 @@
+class User < ApplicationRecord
+  validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
+                    uniqueness: { case_sensitive: false }
+
+  has_one :student, dependent: :destroy
+  has_one :teacher, dependent: :destroy
+
+  has_many :user_relationships, dependent: :destroy
+  has_many :followings, through: :user_relationships, source: :follow, dependent: :destroy
+  has_many :reverses_of_user_relationship, class_name: 'UserRelationship', foreign_key: 'follow_id', dependent: :destroy
+  has_many :followers, through: :reverses_of_user_relationship, source: :user, dependent: :destroy
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         :confirmable,
+         :omniauthable, omniauth_providers: %i[facebook twitter google_oauth2]
+  
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+    end
+  end
+
+  def follow(other_user)
+    unless self==other_user
+      self.user_relationships.find_or_create_by(follow_id: other_user.id)
+    end
+  end
+
+  def unfollow(other_user)
+    user_relationship = self.user_relationships.find_by(follow_id: other_user.id)
+    user_relationship.destroy if user_relationship
+  end
+
+  def following?(other_user)
+    self.followings.include?(other_user)
+  end
+end

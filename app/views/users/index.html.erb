@@ -1,0 +1,13 @@
+<h1>User 一覧ページ</h1>
+
+<% if @users.any? %>
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= user.email %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+  
