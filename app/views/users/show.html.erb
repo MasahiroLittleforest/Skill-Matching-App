@@ -1,1 +1,42 @@
-<h1>User id: <%= @user.id%> 詳細ページ</h1>
+<div class="container">
+  <div class="user-page-header amber lighten-2"></div>
+
+  <div class="user-icon z-depth-3">
+    <% if @user.image? %>
+      <%= image_tag @user.image.url, class: "user-icon-image responsive-img" %>
+    <% else %>
+      <img src="../assets/icons8-user-96.png" alt="user-icon">
+    <% end %>
+  </div>
+
+  <% if @user == current_user %>
+    <%= link_to 'Edit', edit_user_path(@user), class: "user-edit-button waves-effect waves-dark btn log-out amber lighten-5 black-text" %>
+  <% end %>
+
+  <div class="user-info">
+    <h2><%= @user.user_name %></h2>
+    <h5>Real Name: <%= @user.full_name %></h5>
+    <% if @user == current_user %>
+      <h5>E-mail: <%= @user.email %></h5>
+    <% end %>
+    <h5>Age: <%= @user.age %></h5>
+    <h5>Birthday: <%= @user.birthday %></h5>
+    <h5>Gender: <%= @user.gender %></h5>
+    <h5>Profession: <%= @user.profession %></h5>
+    <h5>Bio: <%= @user.bio %></h5>
+    <h5>Following: <%= @user.followings.count %></h5>
+    <h5>Follower: <%= @user.followers.count %></h5>
+  </div>
+
+  <% if @user != current_user %>
+    <%= render 'user_relationships/follow_unfollow_button', user: @user %>
+  <% end %>
+
+  <ul class="collection with-header">
+    <li class="collection-header"><h4>Skills</h4></li>
+    <li class="collection-item">English</li>
+    <li class="collection-item">Programming</li>
+    <li class="collection-item">Cooking</li>
+    <li class="collection-item">Web Marketing</li>
+  </ul>
+</div>

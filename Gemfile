@@ -72,3 +72,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
 gem 'dotenv-rails'
+
+gem 'jquery-rails'
+
+gem 'carrierwave'

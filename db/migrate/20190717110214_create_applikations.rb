@@ -1,0 +1,11 @@
+class CreateApplikations < ActiveRecord::Migration[5.2]
+  def change
+    create_table :applikations do |t|
+      t.references :student, foreign_key: true
+      t.references :teacher, foreign_key: true
+      t.datetime :appointment
+
+      t.timestamps
+    end
+  end
+end

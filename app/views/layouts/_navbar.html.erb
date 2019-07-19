@@ -1,0 +1,53 @@
+<header>
+  <nav>
+    <div class="nav-wrapper amber lighten-2">
+      <div class="container">
+        <a href="/" class="brand-logo black-text" id="logo">⚡️Thunder</a>
+        
+        <a href="#" data-target="hamburger-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+          <li>
+            <%=
+              link_to 'ログアウト',
+              destroy_user_session_path,
+              method: :delete, class: 'waves-effect waves-dark btn log-out amber lighten-5 black-text'
+            %>
+          </li>
+          <li>
+            <%=
+              link_to 'マイページ',
+              user_path(current_user),
+              class: "waves-effect waves-dark btn log-in amber lighten-5 black-text"
+            %>
+          </li>
+        <% else %>
+          <li>
+            <%=
+              link_to '新規登録',
+              new_user_registration_path,
+              class: "waves-effect waves-dark btn sign-up amber lighten-5 black-text"
+            %>
+          </li>
+          <li>
+            <%=
+              link_to 'ログイン',
+              new_user_session_path,
+              class: "waves-effect waves-dark btn log-in amber lighten-5 black-text"
+            %>
+          </li>
+          <li>
+            <a class="waves-effect waves-dark btn become-teacher amber lighten-5 black-text">先生になる</a>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="hamburger-menu">
+    <li><a href="#">新規登録</a></li>
+    <li><a href="#">ログイン</a></li>
+    <li><a href="#">先生になる</a></li>
+  </ul>
+</header>

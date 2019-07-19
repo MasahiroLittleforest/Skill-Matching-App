@@ -12,5 +12,17 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+  $('.datepicker').datepicker({
+    yearRange: [1950, 2001]
+  });
+});

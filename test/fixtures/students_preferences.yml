@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: one
+  category: one
+  skill: one
+  teachers_rate: 1.5
+  min_age: 1
+  max_age: 1
+  gender: MyString
+  prefecture: one
+  lesson_time: 2019-07-17 20:31:06
+  price: 9.99
+
+two:
+  student: two
+  category: two
+  skill: two
+  teachers_rate: 1.5
+  min_age: 1
+  max_age: 1
+  gender: MyString
+  prefecture: two
+  lesson_time: 2019-07-17 20:31:06
+  price: 9.99

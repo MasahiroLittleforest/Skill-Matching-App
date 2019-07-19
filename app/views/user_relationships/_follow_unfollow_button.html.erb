@@ -1,0 +1,11 @@
+<% if current_user.following?(user) %>
+  <%= form_for(current_user.user_relationships.find_by(follow_id: user.id), html: { method: :delete }) do |f| %>
+    <%= hidden_field_tag :follow_id, user.id %>
+    <%= f.submit 'フォロー中', class: "waves-effect waves-dark btn see-more amber lighten-2" %>
+  <% end %>
+<% else %>
+  <%= form_for(current_user.user_relationships.build) do |f| %>
+    <%= hidden_field_tag :follow_id, user.id %>
+    <%= f.submit 'フォロー', class: "waves-effect waves-dark btn see-more amber lighten-5" %>
+  <% end %>
+<% end %>
