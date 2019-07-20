@@ -14,7 +14,6 @@
 //= require activestorage
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 
@@ -22,6 +21,7 @@
 
 $(document).ready(function(){
   $('.sidenav').sidenav();
+  $('select').formSelect();
   $('.datepicker').datepicker({
     yearRange: [1950, 2001]
   });

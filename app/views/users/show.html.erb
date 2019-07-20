@@ -4,28 +4,29 @@
   <div class="user-icon z-depth-3">
     <% if @user.image? %>
       <%= image_tag @user.image.url, class: "user-icon-image responsive-img" %>
+      <%= link_to image_tag(@user.image.url), large_img, :'data-lightbox' => image.id %>
     <% else %>
       <img src="../assets/icons8-user-96.png" alt="user-icon">
     <% end %>
   </div>
 
   <% if @user == current_user %>
-    <%= link_to 'Edit', edit_user_path(@user), class: "user-edit-button waves-effect waves-dark btn log-out amber lighten-5 black-text" %>
+    <%= link_to 'Edit', edit_user_path(@user), class: "waves-effect waves-dark btn user-edit amber lighten-5 black-text" %>
   <% end %>
 
   <div class="user-info">
     <h2><%= @user.user_name %></h2>
-    <h5>Real Name: <%= @user.full_name %></h5>
+    <h5>本名: <%= @user.full_name %></h5>
     <% if @user == current_user %>
-      <h5>E-mail: <%= @user.email %></h5>
+      <h5>メールアドレス: <%= @user.email %></h5>
     <% end %>
-    <h5>Age: <%= @user.age %></h5>
-    <h5>Birthday: <%= @user.birthday %></h5>
-    <h5>Gender: <%= @user.gender %></h5>
-    <h5>Profession: <%= @user.profession %></h5>
-    <h5>Bio: <%= @user.bio %></h5>
-    <h5>Following: <%= @user.followings.count %></h5>
-    <h5>Follower: <%= @user.followers.count %></h5>
+    <h5>年齢: <%= @user.age %></h5>
+    <h5>生年月日: <%= @user.birthday %></h5>
+    <h5>性別: <%= @user.gender_i18n %></h5>
+    <h5>職業: <%= @user.profession %></h5>
+    <h5>自己紹介: <%= @user.bio %></h5>
+    <h5>フォロー: <%= @user.followings.count %></h5>
+    <h5>フォロワー: <%= @user.followers.count %></h5>
   </div>
 
   <% if @user != current_user %>
@@ -39,4 +40,8 @@
     <li class="collection-item">Cooking</li>
     <li class="collection-item">Web Marketing</li>
   </ul>
+
+  <% if @user == current_user %>
+    <%= link_to 'Activate Teacher Account', teachers_create_path, class: "waves-effect waves-dark btn activate-teacher-account red black-text" %>
+  <% end %>
 </div>

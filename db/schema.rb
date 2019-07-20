@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_092311) do
+ActiveRecord::Schema.define(version: 2019_07_19_163708) do
 
   create_table "applikations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "student_id"
@@ -161,7 +161,7 @@ ActiveRecord::Schema.define(version: 2019_07_19_092311) do
     t.string "user_name"
     t.string "image"
     t.integer "age"
-    t.string "gender"
+    t.integer "gender", default: 0, null: false
     t.string "profession"
     t.string "bio"
     t.date "birthday"

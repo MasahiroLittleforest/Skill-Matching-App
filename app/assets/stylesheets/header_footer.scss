@@ -3,7 +3,10 @@ header {
     font-weight: bold;
   }
   .btn {
-    &.sign-up, &.log-in, &.become-teacher, &.log-out {
+    &.sign-up,
+    &.log-in,
+    &.become-teacher,
+    &.log-out {
       border-radius: 20px;
     }
   }

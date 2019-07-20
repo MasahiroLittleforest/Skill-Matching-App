@@ -1,0 +1,127 @@
+.eye-catch {
+  border: 3px solid #ffd54f;
+  border-radius: 30px;
+  padding: 40px;
+  margin: 80px 0 120px 0;
+  position: relative;
+  h3 {
+    margin: 0 0 40px 0;
+  }
+  p {
+    margin: 25px 0;
+  }
+  img {
+    position: absolute;
+    top: 30%;
+    left: 68%;
+  }
+}
+
+.lp-header {
+  display: flex;
+  align-items: center;
+  &:after {
+    content: "";
+    flex-grow: 1;
+    height: 3px;
+    background: #ffd54f;
+    margin:0 .4em;
+  }
+}
+
+
+// lets-learn
+.lets-learn {
+  margin-bottom: 120px;
+  .teacher-thumbnail-examples {
+    padding: 30px;
+    .teacher-thumbnail-example {
+      background-color: #ffd54f;
+      height: 90px;
+      width: 70%;
+      border-radius: 45px;
+      display: flex;
+      align-items: center;
+      margin: 20px auto;
+      .teacher-icon {
+        float: left;
+        margin: 0 30px;
+      }
+      .teacher-info {
+        display: flex;
+        .teacher-info-left {
+          float: left;
+          margin-right: 200px;
+        }
+        .teacher-info-right {
+          float: left;
+          clear: left;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  &.see-more {
+    border-radius: 20px;
+    width: 25%;
+  }
+}
+// -------------------------
+
+// why-thunder
+.why-thunder {
+  margin-bottom: 120px;
+  .why-thunder-reasons {
+    padding: 30px;
+    .why-thunder-reason {
+      margin: 30px 0;
+      display: flex;
+      align-items: center;
+      .why-thunder-circle {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        border: 2px solid #ffd54f;
+        margin: 20px;
+      }
+      .circle-1, .circle-3 {
+        float: left;
+      }
+      .circle-2 {
+        float: right;
+      }
+      .description-1,
+      .description-3 {
+        float: left;
+      }
+      .description-2 {
+        float: right;
+        margin: 0 0 0 auto;
+      }
+      h5 {
+        font-weight: bold;
+      }
+    }
+  }
+}
+// --------------------
+
+// lets-start
+.lets-start {
+  clear: both;
+  margin-bottom: 80px;
+  .lets-start-buttons {
+    padding: 60px 30px;
+    .btn-large {
+      &.register-as-student,
+      &.register-as-teacher {
+        border-radius: 30px;
+        width: 25%;
+        margin: 0 40px;
+      }
+    }
+  }
+}
+// ---------------------------------------------------

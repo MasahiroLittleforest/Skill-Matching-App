@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="eye-catch z-depth-4">
+    <h3>世の中すべてを、教室にしよう</h3>
+    <p>世の中にまだまだあるあなたの知らないこと、<br>学んでみたくはありませんか？</p>
+    <p>特別なスキルを持っているのに、<br>持て余していませんか？</p>
+    <p>あなたが何か他の人とは違うことができるなら、<br>世の中には必ずそれを必要としてる人がいます。</p>
+    <p>⚡️Thunder なら、世界中全てが、あなた専用の教室になります。</p>
+    <p>活用しないなんて、もったいない！！！</p>
+    <img src="../assets/earth-globe-svgrepo-com.svg" alt="globe-icon" height=300, width=300>
+  </div>
+
+  <div class="lets-learn">
+    <h4 class="lp-header">さっそく学んでみよう</h4>
+
+    <div class="teacher-thumbnail-examples">
+      <% 3.times do %>
+        <div class="teacher-thumbnail-example z-depth-3 waves-effect waves-dark">
+          <img src="../assets/icons8-circled-user-64.png" alt="teacher-image" class="teacher-icon">
+          <div class="teacher-info">
+            <div class="teacher-info-left">
+              <ul class="teacher-info-1">
+                <li>Name:</li>
+                <li>教えられるスキル:</li>
+                <li>出身国:</li>
+              </ul>
+            </div>
+            <div class="teacher-info-right">
+              <ul class="teacher-info-2">
+                  <li>職業:</li>
+                  <li>資格:</li>
+                  <li>市域:</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="center">
+      <a class="waves-effect waves-dark btn see-more amber lighten-2 black-text">もっとみる</a>
+    </div>
+  </div>
+
+  <div class="why-thunder">
+    <h4 class="lp-header">Why ⚡️Thunder?</h4>
+
+    <div class="why-thunder-reasons">
+      <div class="why-thunder-reason why-thunder-1">
+        <div class="why-thunder-circle circle-1 z-depth-1"></div>
+        <div class="description description-1">
+          <h5>場所にとらわれず、自分の好きなことをまなべる、教えられる。</h5>
+            <p>自宅近くのカフェや、なんならもう、自宅をあなたの教室にしちゃうのはどうでしょう？<br>
+              雨の日はのんびりおうちでスキルアップするのも楽しいかも
+            </p>
+        </div>
+      </div>
+
+      <div class="why-thunder-reason why-thunder-2">
+        <div class="description description-2">
+            <h5>みたことないこと、教えよう見つけよう。</h5>
+              <p>⚡️Thunder ではどんなことを学ぶのも、どんなことを教えるのも自由。 <br>
+                誰かがインドゾウの正しい飼い方を教えてくれるかも...?
+              </p>
+        </div>
+        <div class="why-thunder-circle circle-2 z-depth-1"></div>
+      </div>
+
+      <div class="why-thunder-reason why-thunder-3">
+        <div class="why-thunder-circle circle-3 z-depth-1"></div>
+        <div class="description description-3">
+            <h5>お互いの評価がみられるから安心。</h5>
+              <p>人間誰しもはじめましてはドキドキするもの。<br>
+                評価の高い相手なら安心してスキルアップに集中できますね。
+              </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lets-start">
+    <h4 class="lp-header">さあ、はじめよう</h4>
+    <div class="lets-start-buttons">
+      <div class="center">
+        <%=
+          link_to '新規登録',
+          new_user_registration_path,
+          class: "waves-effect waves-dark btn-large register-as-student amber lighten-2 black-text"
+        %>
+        <a class="waves-effect waves-dark btn-large register-as-teacher amber lighten-2 black-text">先生になって教える</a>
+      </div>
+    </div>
+  </div>
+</div>

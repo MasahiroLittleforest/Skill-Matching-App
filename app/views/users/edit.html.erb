@@ -38,6 +38,16 @@
       </div>
 
       <div class="input-field col s12">
+        <%= f.select :gender, User.genders.keys.map{ |k| [k, k] } %>
+        <%= f.label :gender %>
+      </div>
+
+      <div class="input-field col s12">
+        <%= f.text_field :profession, class: "validate" %>
+        <%= f.label :profession %>
+      </div>
+
+      <div class="input-field col s12">
         <%= f.text_area :bio, class: "materialize-textarea" %>
         <%= f.label :bio, 'Bio' %>
       </div>

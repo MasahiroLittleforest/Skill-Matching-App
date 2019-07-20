@@ -35,9 +35,26 @@
 }
 
 .btn {
-  &.user-edit-button {
-    line-height: 60px;
+  &.follow,
+  &.unfollow {
     font-size: 20px;
+    border-radius: 30px;
+    height: 60px;
+    width: 150px;
+    line-height: 60px;
+    position: absolute;
+    top: 34%;
+    left: 68%;
+  }
+  &.user-edit {
+    font-size: 20px;
+    border-radius: 30px;
+    height: 60px;
+    width: 150px;
+    line-height: 60px;
+    position: absolute;
+    top: 34%;
+    left: 68%;
   }
   &.submit {
     height: 60px;
@@ -55,13 +72,4 @@
     border-radius: 30px;
     margin: 0 60px;
   }
-}
-
-.btn.user-edit-button {
-  border-radius: 30px;
-  height: 60px;
-  width: 150px;
-  position: absolute;
-  top: 34%;
-  left: 68%;
 }

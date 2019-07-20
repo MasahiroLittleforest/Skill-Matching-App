@@ -21,6 +21,12 @@ class User < ApplicationRecord
   
   mount_uploader :image, ImageUploader
 
+  enum gender: {
+    unanswered: 0,
+    male: 1,
+    female: 2,
+    other: 3
+  }
 
 
   def self.from_omniauth(auth)
@@ -30,22 +36,37 @@ class User < ApplicationRecord
     end
   end
 
+  
   def full_name
-      [first_name, middle_name, last_name].join(' ')
+    [first_name, middle_name, last_name].join(' ')
   end
 
+
+  def age
+    date_format = "%Y%m%d"
+    (Date.today.strftime(date_format).to_i - birthday.strftime(date_format).to_i) / 10000
+  end
+
+
   def follow(other_user)
-    unless self==other_user
+    unless self　==　other_user
       self.user_relationships.find_or_create_by(follow_id: other_user.id)
     end
   end
+
 
   def unfollow(other_user)
     user_relationship = self.user_relationships.find_by(follow_id: other_user.id)
     user_relationship.destroy if user_relationship
   end
 
+
   def following?(other_user)
     self.followings.include?(other_user)
+  end
+
+
+  def activate_teacher_account
+    self.teachers.find_or_create_by(user_id: self.id)
   end
 end
