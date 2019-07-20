@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Followings</h1>
+
+  <div class="col s12">
+    <% if @user.followers.count == 0 %>
+      <p class="col s12">フォローされているユーザーはいません。</p>
+    <% else %>
+      <%= render 'users/users', users: @followers %>
+    <% end %>
+  </div>
+</div>

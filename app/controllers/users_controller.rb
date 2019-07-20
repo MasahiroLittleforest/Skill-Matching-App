@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def index
     @users = User.all
@@ -29,8 +31,31 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
 
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings
+    counts(@user)
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers
+    counts(@user)
+  end
+
   private
-    def user_params
-      params.require(:user).permit(:user_name, :first_name, :middle_name, :last_name, :birthday, :bio, :image, :gender, :profession)
-    end
+
+  def user_params
+    params.require(:user).permit(
+      :user_name,
+      :first_name,
+      :middle_name,
+      :last_name,
+      :birthday,
+      :bio,
+      :image,
+      :gender,
+      :profession
+    )
+  end
 end

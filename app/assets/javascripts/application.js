@@ -21,6 +21,7 @@
 
 $(document).ready(function(){
   $('.sidenav').sidenav();
+  $('.materialboxed').materialbox();
   $('select').formSelect();
   $('.datepicker').datepicker({
     yearRange: [1950, 2001]

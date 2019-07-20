@@ -1,0 +1,20 @@
+<% if users.any? %>
+  <ul class="user-list">
+    <% users.each do |user| %>
+      <li class="user-card">
+        <div class="col s12">
+          <div class="card-panel user amber lighten-2 z-depth-1">
+            <div class="row valign-wrapper">
+              <div class="col s2">
+                    <img class="media-object img-rounded" src="/assets/f_f_object_115_s64_f_object_115_0bg.png" alt="user_icon">
+              </div>
+              <div class="col s10">
+                <%= link_to user.user_name, user_path(user) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

@@ -8,7 +8,7 @@
 .user-icon {
   height: 250px;
   width: 250px;
-  border: 2px solid #ffd54f;
+  border: 3px solid #ffd54f;
   border-radius: 15%;
   background-color: white;
   position: absolute;
@@ -71,5 +71,11 @@
     font-size: 18px;
     border-radius: 30px;
     margin: 0 60px;
+  }
+}
+
+.card-panel {
+  &.user {
+    border-radius: 80px;
   }
 }

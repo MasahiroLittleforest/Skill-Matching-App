@@ -3,10 +3,9 @@
 
   <div class="user-icon z-depth-3">
     <% if @user.image? %>
-      <%= image_tag @user.image.url, class: "user-icon-image responsive-img" %>
-      <%= link_to image_tag(@user.image.url), large_img, :'data-lightbox' => image.id %>
+      <%= image_tag @user.image.url, class: "user-icon-image responsive-img materialboxed" %>
     <% else %>
-      <img src="../assets/icons8-user-96.png" alt="user-icon">
+      <img src="../assets/icons8-user-96.png" alt="user-icon" class="materialboxed">
     <% end %>
   </div>
 
@@ -20,26 +19,41 @@
     <% if @user == current_user %>
       <h5>メールアドレス: <%= @user.email %></h5>
     <% end %>
-    <h5>年齢: <%= @user.age %></h5>
+    <h5>年齢: <%= @user.age if @user.birthday? %></h5>
     <h5>生年月日: <%= @user.birthday %></h5>
     <h5>性別: <%= @user.gender_i18n %></h5>
     <h5>職業: <%= @user.profession %></h5>
     <h5>自己紹介: <%= @user.bio %></h5>
-    <h5>フォロー: <%= @user.followings.count %></h5>
-    <h5>フォロワー: <%= @user.followers.count %></h5>
+    <h5><%= link_to ('フォロー: ' + @user.followings.count.to_s), followings_user_path(@user) %></h5>
+    <h5><%= link_to ('フォロワー: ' + @user.followers.count.to_s), followers_user_path(@user) %></h5>
   </div>
 
   <% if @user != current_user %>
     <%= render 'user_relationships/follow_unfollow_button', user: @user %>
   <% end %>
 
-  <ul class="collection with-header">
-    <li class="collection-header"><h4>Skills</h4></li>
-    <li class="collection-item">English</li>
-    <li class="collection-item">Programming</li>
-    <li class="collection-item">Cooking</li>
-    <li class="collection-item">Web Marketing</li>
-  </ul>
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>Skills</th>
+        <th>Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>English</td>
+        <td>Native speaker</td>
+      </tr>
+      <tr>
+        <td>Programming</td>
+        <td>Working as a programmer</td>
+      </tr>
+      <tr>
+        <td>Cooking</td>
+        <td>Intermediate</td>
+      </tr>
+    </tbody>
+  </table>
 
   <% if @user == current_user %>
     <%= link_to 'Activate Teacher Account', teachers_create_path, class: "waves-effect waves-dark btn activate-teacher-account red black-text" %>

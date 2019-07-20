@@ -4,11 +4,11 @@
     <%= form_for(@user) do |f| %>
       <div class="file-field input-field col s12">
         <div class="btn">
-        <span>Image</span>
-          <%= f.file_field :image %>
+          <%= f.file_field :image, accept: (@user.image.accept_extensions) %>
+          <%= f.label :image, class: "white-text" %>
         </div>
         <div class="file-path-wrapper">
-          <%= f.text_field :image, class: "file-path validate" %>
+          <%= f.text_field :image, accept: (@user.image.accept_extensions), class: "file-path validate" %>
         </div>
       </div>
 
