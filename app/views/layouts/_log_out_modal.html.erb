@@ -1,16 +1,16 @@
 <!-- Modal Structure -->
-  <div id="log-out-modal" class="modal">
-    <div class="modal-content">
-      <h4>ログアウトしますか？</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#" class="modal-close waves-effect waves-dark btn-flat">Cancel</a>
-      <%=
-        link_to 'Yes',
-        destroy_user_session_path,
-        method: :delete,
-        class: "modal-close waves-effect waves-dark btn-flat amber lighten-2"
-      %>
-    </div>
+<div id="log-out-modal" class="modal">
+  <div class="modal-content">
+    <h4>ログアウトしますか？</h4>
+    <p>A bunch of text</p>
   </div>
+  <div class="modal-footer">
+    <a href="#" class="modal-close waves-effect waves-dark btn-flat">Cancel</a>
+    <%=
+      link_to 'Yes',
+      destroy_user_session_path,
+      method: :delete,
+      class: "modal-close waves-effect waves-dark btn-flat amber lighten-2"
+    %>
+  </div>
+</div>

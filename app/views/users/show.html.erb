@@ -51,6 +51,25 @@
     </tbody>
   </table>
 
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>Experiences</th>
+        <th>Description</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.experiences.each do |experience| %>
+        <tr>
+          <td><%= link_to experience.title, experience_path(experience) %></td>
+          <td><%= experience.description %></td>
+          <td><%= experience.date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 <% if false %>
   <% if @user == current_user %>
     <%= link_to 'Activate Teacher Account', teachers_create_path, class: "waves-effect waves-dark btn activate-teacher-account red black-text" %>

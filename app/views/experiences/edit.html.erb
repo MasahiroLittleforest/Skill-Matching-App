@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Experience Edit</h1>
+
+  <%= form_for(@experience) do |f| %>
+    <div class="input-field col s12">
+      <%= f.text_field :title, class: "validate" %>
+      <%= f.label :title, 'Title' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_field :description, class: "validate" %>
+      <%= f.label :description, 'Description' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_field :date, class: "validate" %>
+      <%= f.label :date, 'Date' %>
+    </div>
+
+    <div class="center">
+      <%= link_to 'キャンセル', experience_path(@experience), class: "waves-effect waves-dark btn cancel amber lighten-5 black-text" %>
+      <%= f.submit 'Update', class: "waves-effect waves-dark btn submit amber lighten-2 black-text" %>
+    </div>
+  <% end %>
+</div>

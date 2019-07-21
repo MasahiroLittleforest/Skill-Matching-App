@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Experience New</h1>
+
+  <%= form_for(@experience) do |f| %>
+    <div class="input-field col s12">
+      <%= f.text_field :title, class: "validate" %>
+      <%= f.label :title, 'Experience' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_field :description, class: "validate" %>
+      <%= f.label :description, 'description' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_field :date, class: "validate" %>
+      <%= f.label :date, 'Date' %>
+    </div>
+
+    <%= f.submit 'Submit', class: "waves-effect waves-dark btn submit amber lighten-2 black-text" %>
+  <% end %>
+</div>

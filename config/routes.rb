@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'experiences/show'
+  get 'experiences/new'
+  get 'experiences/create'
+  get 'experiences/edit'
+  get 'experiences/update'
+  get 'experiences/destroy'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -22,4 +28,5 @@ Rails.application.routes.draw do
   resources :teachers, only: %i[show create edit update destroy]
   resources :teacher_activations, only: [:create]
   resources :skills, only: %i[show new create edit update destroy]
+  resources :experiences, only: %i[show new create edit update destroy]
 end
