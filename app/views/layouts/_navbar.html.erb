@@ -8,11 +8,9 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in? %>
           <li>
-            <%=
-              link_to 'ログアウト',
-              destroy_user_session_path,
-              method: :delete, class: 'waves-effect waves-dark btn log-out amber lighten-5 black-text'
-            %>
+            <a class="waves-effect waves-dark btn log-out modal-trigger amber lighten-5 black-text" href="#log-out-modal">
+              ログアウト
+            </a>
           </li>
           <li>
             <%=

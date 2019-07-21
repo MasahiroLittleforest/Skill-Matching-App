@@ -37,25 +37,23 @@
       <tr>
         <th>Skills</th>
         <th>Level</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>English</td>
-        <td>Native speaker</td>
-      </tr>
-      <tr>
-        <td>Programming</td>
-        <td>Working as a programmer</td>
-      </tr>
-      <tr>
-        <td>Cooking</td>
-        <td>Intermediate</td>
-      </tr>
+      <% @user.skills.each do |skill| %>
+        <tr>
+          <td><%= link_to skill.name, skill_path(skill) %></td>
+          <td><%= skill.level %></td>
+          <td><%= skill.description %></td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 
+<% if false %>
   <% if @user == current_user %>
     <%= link_to 'Activate Teacher Account', teachers_create_path, class: "waves-effect waves-dark btn activate-teacher-account red black-text" %>
   <% end %>
+<% end %>
 </div>

@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :followings, through: :user_relationships, source: :follow, dependent: :destroy
   has_many :reverses_of_user_relationship, class_name: 'UserRelationship', foreign_key: 'follow_id', dependent: :destroy
   has_many :followers, through: :reverses_of_user_relationship, source: :user, dependent: :destroy
+  has_many :skills, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
