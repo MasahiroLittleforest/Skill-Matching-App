@@ -10,7 +10,7 @@
   </div>
 
   <% if @user == current_user %>
-    <%= link_to 'Edit', edit_user_path(@user), class: "waves-effect waves-dark btn user-edit amber lighten-5 black-text" %>
+    <%= link_to 'Edit', edit_user_path(@user), class: "waves-effect waves-dark btn user-edit" %>
   <% end %>
 
   <div class="user-info">
@@ -32,60 +32,84 @@
     <%= render 'user_relationships/follow_unfollow_button', user: @user %>
   <% end %>
 
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Skills</th>
-        <th>Level</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @user.skills.each do |skill| %>
-        <tr>
-          <td><%= link_to skill.name, skill_path(skill) %></td>
-          <td><%= skill.level %></td>
-          <td><%= skill.description %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="skills">
+    <% if @user == current_user %>
+      <div class="right">
+        <%= link_to 'Add Skills', new_skill_path, class: "waves-effect waves-dark btn add-skills" %>
+      </div>
+    <% end %>
 
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Experiences</th>
-        <th>Description</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @user.experiences.each do |experience| %>
+    <table class="striped">
+      <thead>
         <tr>
-          <td><%= link_to experience.title, experience_path(experience) %></td>
-          <td><%= experience.description %></td>
-          <td><%= experience.date %></td>
+          <th>Skills</th>
+          <th>Level</th>
+          <th>Description</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @user.skills.each do |skill| %>
+          <tr>
+            <td><%= link_to skill.name, skill_path(skill) %></td>
+            <td><%= skill.level %></td>
+            <td><%= skill.description %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="experiences">
+    <% if @user == current_user %>
+      <div class="right">
+        <%= link_to 'Add Experiences', new_experience_path, class: "waves-effect waves-dark btn add-experiences" %>
+      </div>
+    <% end %>
 
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Certifications</th>
-        <th>Date of Acquisition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @user.certifications.each do |certification| %>
+    <table class="striped">
+      <thead>
         <tr>
-          <td><%= link_to certification.name, certification_path(certification) %></td>
-          <td><%= certification.date_of_acquisition %></td>
+          <th>Experiences</th>
+          <th>Description</th>
+          <th>Date</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @user.experiences.each do |experience| %>
+          <tr>
+            <td><%= link_to experience.title, experience_path(experience) %></td>
+            <td><%= experience.description %></td>
+            <td><%= experience.date %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="certifications">
+    <% if @user == current_user %>
+      <div class="right">
+        <%= link_to 'Add Certifications', new_certification_path, class: "waves-effect waves-dark btn add-certifications" %>
+      </div> 
+    <% end %>
+
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Certifications</th>
+          <th>Date of Acquisition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user.certifications.each do |certification| %>
+          <tr>
+            <td><%= link_to certification.name, certification_path(certification) %></td>
+            <td><%= certification.date_of_acquisition %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
 <% if false %>
   <% if @user == current_user %>

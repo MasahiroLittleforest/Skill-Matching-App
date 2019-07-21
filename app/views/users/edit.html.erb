@@ -38,7 +38,7 @@
       </div>
 
       <div class="input-field col s12">
-        <%= f.select :gender, User.genders.keys.map{ |k| [k, k] } %>
+        <%= f.select :gender, User.genders.keys.map{ |k| [I18n.t("enums.user.gender.#{k}"), k] } %>
         <%= f.label :gender %>
       </div>
 
@@ -54,8 +54,8 @@
 
       <div class="center">
         <div class="user_edit_buttons">
-          <%= link_to 'キャンセル', user_path(@user), class: "waves-effect waves-dark btn cancel amber lighten-5 black-text" %>
-          <%= f.submit '更新する', class: "waves-effect waves-dark btn submit amber lighten-2 black-text" %>
+          <%= link_to 'Cancel', user_path(@user), class: "waves-effect waves-dark btn cancel amber lighten-5 black-text" %>
+          <%= f.submit 'Update', class: "waves-effect waves-dark btn submit amber lighten-2 black-text" %>
         </div>
       </div>
     <% end %>

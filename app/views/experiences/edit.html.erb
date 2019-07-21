@@ -8,7 +8,7 @@
     </div>
 
     <div class="input-field col s12">
-      <%= f.text_field :description, class: "validate" %>
+      <%= f.text_area :description, class: "materialize-textarea" %>
       <%= f.label :description, 'Description' %>
     </div>
 
@@ -18,7 +18,7 @@
     </div>
 
     <div class="center">
-      <%= link_to 'キャンセル', experience_path(@experience), class: "waves-effect waves-dark btn cancel amber lighten-5 black-text" %>
+      <%= link_to 'Cancel', experience_path(@experience), class: "waves-effect waves-dark btn cancel amber lighten-5 black-text" %>
       <%= f.submit 'Update', class: "waves-effect waves-dark btn submit amber lighten-2 black-text" %>
     </div>
   <% end %>

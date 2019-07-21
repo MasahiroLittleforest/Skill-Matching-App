@@ -5,11 +5,14 @@
     <h4>Id: <%= @skill.id %></h4>
     <h4>Name: <%= @skill.name %></h4>
     <h4>Level: <%= @skill.level %></h4>
+    <div class="progress skill-level-bar">
+      <div class="determinate" style="width: <%= @skill.level %>%"></div>
+    </div>
     <h4>Description: <%= @skill.description %></h4>
   </div>
 
   <div class="center">
-    <%= link_to 'Back', user_path(@skill.user), class: "waves-effect waves-dark btn skill-edit amber lighten-5 black-text" %>
+    <%= link_to 'Back', user_path(@skill.user), class: "waves-effect waves-dark btn skill-edit-cancel amber lighten-5 black-text" %>
     <% if @skill.user == current_user %>
       <%= link_to 'Edit', edit_skill_path(@skill), class: "waves-effect waves-dark btn skill-edit amber lighten-2 black-text" %>
     <% end %>

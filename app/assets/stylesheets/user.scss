@@ -79,6 +79,15 @@
   }
 }
 
+.skills,
+.experiences,
+.certifications {
+  margin-top: 60px;
+  .btn {
+    border-radius: 20px;
+  }
+}
+
 .card-panel {
   &.user {
     border-radius: 80px;
