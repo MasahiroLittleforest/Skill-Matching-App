@@ -70,6 +70,23 @@
     </tbody>
   </table>
 
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>Certifications</th>
+        <th>Date of Acquisition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.certifications.each do |certification| %>
+        <tr>
+          <td><%= link_to certification.name, certification_path(certification) %></td>
+          <td><%= certification.date_of_acquisition %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 <% if false %>
   <% if @user == current_user %>
     <%= link_to 'Activate Teacher Account', teachers_create_path, class: "waves-effect waves-dark btn activate-teacher-account red black-text" %>

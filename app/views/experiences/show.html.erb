@@ -11,7 +11,7 @@
   <div class="center">
     <%= link_to 'Back', user_path(@experience.user), class: "waves-effect waves-dark btn skill-edit amber lighten-5 black-text" %>
     <% if @experience.user == current_user %>
-      <%= link_to 'Edit', edit_skill_path(@experience), class: "waves-effect waves-dark btn skill-edit amber lighten-2 black-text" %>
+      <%= link_to 'Edit', edit_experience_path(@experience), class: "waves-effect waves-dark btn skill-edit amber lighten-2 black-text" %>
     <% end %>
   </div>
 </div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Certification New</h1>
+
+  <%= form_for(@certification) do |f| %>
+    <div class="input-field col s12">
+      <%= f.text_field :name, class: "validate" %>
+      <%= f.label :name, 'Certification' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_field :date_of_acquisition, class: "datepicker" %>
+      <%= f.label :date_of_acquisition, 'Date of Acquisition' %>
+    </div>
+
+    <%= f.submit 'Submit', class: "waves-effect waves-dark btn submit amber lighten-2 black-text" %>
+  <% end %>
+</div>

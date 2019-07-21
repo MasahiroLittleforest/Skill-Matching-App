@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :followers, through: :reverses_of_user_relationship, source: :user, dependent: :destroy
   has_many :skills, dependent: :destroy
   has_many :experiences, dependent: :destroy
+  has_many :certifications, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
