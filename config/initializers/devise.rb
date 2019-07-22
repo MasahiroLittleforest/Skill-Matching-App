@@ -310,6 +310,7 @@ Devise.setup do |config|
                   oauth_callback: "#{ENV['HOST']}/users/auth/twitter/callback"
   config.omniauth :google_oauth2,
                   ENV['GOOGLE_CLIENT_ID'],
-                  ENV['GOOGLE_CLIENT_SECRET']
+                  ENV['GOOGLE_CLIENT_SECRET'],
+                  scope: 'email'
   OmniAuth.config.logger = Rails.logger if Rails.env.development?
 end
