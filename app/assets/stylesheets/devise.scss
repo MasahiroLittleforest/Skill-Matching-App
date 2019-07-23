@@ -1,0 +1,11 @@
+.btn {
+  &.send-me-reset-password-instructions,
+  &.change-my-password,
+  &.resend-confirmation-instructions {
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    border-radius: 30px;
+    margin: 0 60px;
+  }
+}
