@@ -9,3 +9,32 @@
     margin: 0 60px;
   }
 }
+
+.log-in-with-oauth {
+  display: flex;
+  justify-content: center;
+  .btn {
+    &.log-in-with-google,
+    &.log-in-with-facebook {
+      margin: 0 60px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 20px;
+      i {
+        padding-right: 6px;
+      }
+    }
+    &.log-in-with-google {
+      background-color: #DB4437;
+      &:hover {
+        background-color: lighten(#DB4437, 8%);
+      }
+    }
+    &.log-in-with-facebook {
+      background-color: #3B5998;
+      &:hover {
+        background-color: lighten(#3B5998, 8%);
+      }
+    }
+  }
+}
