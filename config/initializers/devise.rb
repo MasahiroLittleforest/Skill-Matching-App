@@ -301,8 +301,7 @@ Devise.setup do |config|
                   ENV['FACEBOOK_KEY'],
                   ENV['FACEBOOK_SECRET'],
                   scope: 'email',
-                  info_fields: 'email',
-                  callback_url: "#{ENV['HOST']}/users/auth/facebook/callback"
+                  info_fields: 'email'
   config.omniauth :twitter,
                   ENV['TWITTER_API_KEY'],
                   ENV['TWITTER_API_SECRET'],
