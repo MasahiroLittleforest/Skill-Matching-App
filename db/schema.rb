@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_084049) do
+ActiveRecord::Schema.define(version: 2019_07_24_141627) do
 
   create_table "applikations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "student_id"
@@ -145,6 +145,15 @@ ActiveRecord::Schema.define(version: 2019_07_24_084049) do
     t.index ["teacher_id"], name: "index_teachers_preferences_on_teacher_id"
   end
 
+  create_table "user_links", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_links_on_user_id"
+  end
+
   create_table "user_relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "follow_id"
@@ -198,6 +207,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_084049) do
   add_foreign_key "students_preferences", "students"
   add_foreign_key "teachers", "users"
   add_foreign_key "teachers_preferences", "teachers"
+  add_foreign_key "user_links", "users"
   add_foreign_key "user_relationships", "users"
   add_foreign_key "user_relationships", "users", column: "follow_id"
 end

@@ -142,6 +142,32 @@
     </table>
   </div>
 
+  <div class="user_links">
+    <% if @user == current_user %>
+      <div class="right">
+        <%= link_to 'Add Lessons', new_user_link_path, class: "waves-effect waves-dark btn add-user_links" %>
+      </div> 
+    <% end %>
+
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Socials & Links</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user.user_links.each do |user_link| %>
+          <tr>
+            <td><%= link_to user_link.name, user_link_path(user_link) %></td>
+            <td><%= user_link.name %></td>
+            <td><%= user_link.url %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
 <% if false %>
   <% if @user == current_user %>
     <%= link_to 'Activate Teacher Account', teachers_create_path, class: "waves-effect waves-dark btn activate-teacher-account red black-text" %>

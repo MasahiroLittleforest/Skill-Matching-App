@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>UserLinks#edit</h1>
+  
+  <%= form_for(@user_link) do |f| %>
+    <div class="input-field col s12">
+      <%= f.text_field :name, class: "validate" %>
+      <%= f.label :name, 'Socials & Links' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_field :url, class: "validate" %>
+      <%= f.label :url, 'URL' %>
+    </div>
+
+    <div class="user_link-edit-buttons center">
+      <%= link_to 'Cancel', user_link_path(@user_link), class: "waves-effect waves-dark btn user_link-edit-cancel amber lighten-5 black-text" %>
+      <%= f.submit 'Update', class: "waves-effect waves-dark btn user_link-update amber lighten-2 black-text" %>
+    </div>
+  <% end %>
+</div>
+

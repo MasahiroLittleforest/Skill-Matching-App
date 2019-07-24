@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>UserLinks#show</h1>
+  
+  <div class="user_links">
+    <h4>Id: <%= @user_link.id %></h4>
+    <h4>Name: <%= @user_link.name %></h4>
+  </div>
+
+  <div class="user_links-show-buttons center">
+    <%= link_to 'Back', user_path(@user_link.user), class: "waves-effect waves-dark btn user_link-back amber lighten-5 black-text" %>
+    <% if @user_link.user == current_user %>
+      <%= link_to 'Edit', edit_user_link_path(@user_link), class: "waves-effect waves-dark btn user_link-edit amber lighten-2 black-text" %>
+      <%= link_to 'Delete', user_link_path(@user_link), method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
+  </div>
+</div>
+
