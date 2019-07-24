@@ -1,0 +1,13 @@
+<div class="sign-up-with-oauth">
+  <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "waves-effect waves-dark btn sign-up-with-google" do %>
+    <i class="fab fa-google"></i> Sign up with Google
+  <% end %><br>
+
+  <%= link_to user_facebook_omniauth_authorize_path, method: :post, class: "waves-effect waves-dark btn sign-up-with-facebook" do %>
+    <i class="fab fa-facebook-f"></i>Sign up with Facebook
+  <% end %>
+
+  <%= link_to user_twitter_omniauth_authorize_path, method: :post, class: "waves-effect waves-dark btn sign-up-with-twitter" do %>
+    <i class="fab fa-twitter"></i>Sign up with Twitter
+  <% end %>
+</div>

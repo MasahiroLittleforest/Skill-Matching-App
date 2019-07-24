@@ -10,13 +10,50 @@
   }
 }
 
+.sign-up-with-oauth {
+  display: flex;
+  justify-content: center;
+  .btn {
+    &.sign-up-with-google,
+    &.sign-up-with-facebook,
+    &.sign-up-with-twitter {
+      margin: 0 45px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 20px;
+      i {
+        padding-right: 6px;
+      }
+    }
+    &.sign-up-with-google {
+      background-color: #DB4437;
+      &:hover {
+        background-color: lighten(#DB4437, 8%);
+      }
+    }
+    &.sign-up-with-facebook {
+      background-color: #3B5998;
+      &:hover {
+        background-color: lighten(#3B5998, 8%);
+      }
+    }
+    &.sign-up-with-twitter {
+      background-color: #1DA1F2;
+      &:hover {
+        background-color: lighten(#1DA1F2, 8%);
+      }
+    }
+  }
+}
+
 .log-in-with-oauth {
   display: flex;
   justify-content: center;
   .btn {
     &.log-in-with-google,
-    &.log-in-with-facebook {
-      margin: 0 60px;
+    &.log-in-with-facebook,
+    &.log-in-with-twitter {
+      margin: 0 45px;
       height: 40px;
       line-height: 40px;
       border-radius: 20px;
@@ -34,6 +71,12 @@
       background-color: #3B5998;
       &:hover {
         background-color: lighten(#3B5998, 8%);
+      }
+    }
+    &.log-in-with-twitter {
+      background-color: #1DA1F2;
+      &:hover {
+        background-color: lighten(#1DA1F2, 8%);
       }
     }
   }
