@@ -11,6 +11,7 @@
     <%= link_to 'Back', user_path(@certification.user), class: "waves-effect waves-dark btn certification-back amber lighten-5 black-text" %>
     <% if @certification.user == current_user %>
       <%= link_to 'Edit', edit_certification_path(@certification), class: "waves-effect waves-dark btn certification-edit amber lighten-2 black-text" %>
+      <%= link_to 'Delete', certification_path(@certification), method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
   </div>
 </div>

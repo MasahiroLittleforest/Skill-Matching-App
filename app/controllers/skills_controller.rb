@@ -33,8 +33,9 @@ class SkillsController < ApplicationController
 
   def destroy
     @skill = Skill.find(params[:id])
+    @user = current_user
     @skill.destroy
-    redirect_to root_url
+    redirect_to @user
   end
 
   private

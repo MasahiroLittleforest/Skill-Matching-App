@@ -37,8 +37,9 @@ class LessonsController < ApplicationController
 
   def destroy
     @lesson = Lesson.find(params[:id])
+    @user = current_user
     @lesson.destroy
-    redirect_to authenticated_root_url
+    redirect_to @user
   end
 
   private

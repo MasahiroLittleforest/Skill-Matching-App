@@ -13,6 +13,7 @@
     <%= link_to 'Back', user_path(@lesson.user), class: "waves-effect waves-dark btn lesson-back amber lighten-5 black-text" %>
     <% if @lesson.user == current_user %>
       <%= link_to 'Edit', edit_lesson_path(@lesson), class: "waves-effect waves-dark btn lesson-edit amber lighten-2 black-text" %>
+      <%= link_to 'Delete', lesson_path(@lesson), method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
   </div>
 </div>

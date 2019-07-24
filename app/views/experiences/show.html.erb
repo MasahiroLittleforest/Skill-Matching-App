@@ -12,6 +12,7 @@
     <%= link_to 'Back', user_path(@experience.user), class: "waves-effect waves-dark btn experience-back amber lighten-5 black-text" %>
     <% if @experience.user == current_user %>
       <%= link_to 'Edit', edit_experience_path(@experience), class: "waves-effect waves-dark btn experience-edit amber lighten-2 black-text" %>
+      <%= link_to 'Delete', experience_path(@experience), method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
   </div>
 </div>

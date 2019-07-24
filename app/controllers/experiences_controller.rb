@@ -33,8 +33,9 @@ class ExperiencesController < ApplicationController
 
   def destroy
     @experience = Experience.find(params[:id])
+    @user = current_user
     @experience.destroy
-    redirect_to root_url
+    redirect_to @user
   end
 
   private

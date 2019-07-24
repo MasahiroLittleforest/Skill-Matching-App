@@ -15,6 +15,7 @@
     <%= link_to 'Back', user_path(@skill.user), class: "waves-effect waves-dark btn skill-back amber lighten-5 black-text" %>
     <% if @skill.user == current_user %>
       <%= link_to 'Edit', edit_skill_path(@skill), class: "waves-effect waves-dark btn skill-edit amber lighten-2 black-text" %>
+      <%= link_to 'Delete', skill_path(@skill), method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
   </div>
 </div>
