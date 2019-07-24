@@ -24,11 +24,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @user = User.find(params[:id])
-    @user.destory
+    @user.destroy
     flash[:success] = 'ユーザーを削除しました。'
-    redirect_to authenticated_root_url
+    redirect_to unauthenticated_root_url
   end
 
   def followings
