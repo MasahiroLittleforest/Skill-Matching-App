@@ -111,6 +111,37 @@
     </table>
   </div>
 
+  <div class="lessons">
+    <% if @user == current_user %>
+      <div class="right">
+        <%= link_to 'Add Lessons', new_lesson_path, class: "waves-effect waves-dark btn add-lessons" %>
+      </div> 
+    <% end %>
+
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Lessons</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user.lessons.each do |lesson| %>
+          <tr>
+            <td><%= link_to lesson.name, lesson_path(lesson) %></td>
+            <td><%= lesson.description %></td>
+            <td><%= lesson.lesson_date %></td>
+            <td><%= lesson.lesson_time %></td>
+            <td><%= lesson.price %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
 <% if false %>
   <% if @user == current_user %>
     <%= link_to 'Activate Teacher Account', teachers_create_path, class: "waves-effect waves-dark btn activate-teacher-account red black-text" %>

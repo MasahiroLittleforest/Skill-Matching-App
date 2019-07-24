@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   resources :skills, only: %i[show new create edit update destroy]
   resources :experiences, only: %i[show new create edit update destroy]
   resources :certifications, only: %i[show new create edit update destroy]
+  resources :lessons
 end

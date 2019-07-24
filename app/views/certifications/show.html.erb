@@ -7,8 +7,8 @@
     <h4>Date of Acquisition: <%= @certification.date_of_acquisition %></h4>
   </div>
 
-  <div class="center">
-    <%= link_to 'Back', user_path(@certification.user), class: "waves-effect waves-dark btn certification-edit-cancel amber lighten-5 black-text" %>
+  <div class="certification-show-buttons center">
+    <%= link_to 'Back', user_path(@certification.user), class: "waves-effect waves-dark btn certification-back amber lighten-5 black-text" %>
     <% if @certification.user == current_user %>
       <%= link_to 'Edit', edit_certification_path(@certification), class: "waves-effect waves-dark btn certification-edit amber lighten-2 black-text" %>
     <% end %>

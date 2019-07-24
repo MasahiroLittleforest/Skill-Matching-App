@@ -1,6 +1,9 @@
 .btn {
+  &.certification-submit,
+  &.certification-back,
   &.certification-edit,
-  &.certification-edit-cancel {
+  &.certification-edit-cancel,
+  &.certification-update {
     font-size: 20px;
     border-radius: 30px;
     height: 60px;

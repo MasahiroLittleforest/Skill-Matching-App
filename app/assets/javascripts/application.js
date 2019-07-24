@@ -16,7 +16,8 @@
 //= require jquery_ujs
 //= require_tree .
 
-
+var today = new Date();
+var currentYear = today.getFullYear();
 
 
 $(document).ready(function(){
@@ -25,6 +26,7 @@ $(document).ready(function(){
   $('.materialboxed').materialbox();
   $('select').formSelect();
   $('.datepicker').datepicker({
-    yearRange: [1950, 2001]
+    yearRange: [1950, currentYear]
   });
+  $('.timepicker').timepicker();
 });

@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Lessons#edit</h1>
+  
+  <%= form_for(@lesson) do |f| %>
+    <div class="input-field col s12">
+      <%= f.text_field :name, class: "validate" %>
+      <%= f.label :name, 'Name' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_area :description, class: "validate materialize-textarea" %>
+      <%= f.label :description, 'Description' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_field :lesson_date, class: "validate datepicker" %>
+      <%= f.label :lesson_date, 'Lesson Date' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_field :lesson_time, class: "validate timepicker" %>
+      <%= f.label :lesson_time, 'Lesson Time' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_field :price, class: "validate" %>
+      <%= f.label :price, 'Price' %>
+    </div>
+
+    <div class="center">
+      <%= link_to 'Cancel', lesson_path(@lesson), class: "waves-effect waves-dark btn lesson-edit-cancel amber lighten-5 black-text" %>
+      <%= f.submit 'Update', class: "waves-effect waves-dark btn lesson-update amber lighten-2 black-text" %>
+    </div>
+  <% end %>
+</div>

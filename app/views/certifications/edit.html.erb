@@ -12,9 +12,9 @@
       <%= f.label :date_of_acquisition, 'Date of Acquisition' %>
     </div>
 
-    <div class="center">
-      <%= link_to 'Cancel', certification_path(@certification), class: "waves-effect waves-dark btn cancel amber lighten-5 black-text" %>
-      <%= f.submit 'Update', class: "waves-effect waves-dark btn submit amber lighten-2 black-text" %>
+    <div class="certification-edit-buttons center">
+      <%= link_to 'Cancel', certification_path(@certification), class: "waves-effect waves-dark btn certification-edit-cancel amber lighten-5 black-text" %>
+      <%= f.submit 'Update', class: "waves-effect waves-dark btn certification-update amber lighten-2 black-text" %>
     </div>
   <% end %>
 </div>

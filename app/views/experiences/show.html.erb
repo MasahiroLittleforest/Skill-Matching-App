@@ -8,8 +8,8 @@
     <h4>Date: <%= @experience.date %></h4>
   </div>
 
-  <div class="center">
-    <%= link_to 'Back', user_path(@experience.user), class: "waves-effect waves-dark btn experience-edit amber lighten-5 black-text" %>
+  <div class="experience-show-buttons center">
+    <%= link_to 'Back', user_path(@experience.user), class: "waves-effect waves-dark btn experience-back amber lighten-5 black-text" %>
     <% if @experience.user == current_user %>
       <%= link_to 'Edit', edit_experience_path(@experience), class: "waves-effect waves-dark btn experience-edit amber lighten-2 black-text" %>
     <% end %>

@@ -1,0 +1,16 @@
+<% if lessons.any? %>
+  <ul class="lesson-list">
+    <% lessons.each do |lesson| %>
+      <li class="lesson">
+        <div class="lesson-info">
+          <h4>Id: <%= link_to lesson.id, lesson_path(lesson) %></h4>
+          <h4>Teacher's name: <%= lesson.user.user_name %></h4>
+          <h4>Name: <%= lesson.name %></h4>
+          <h4>Description: <%= lesson.description %></h4>
+          <h4>Date & Time: <%= lesson.lesson_date_time %></h4>
+          <h4>Price: <%= lesson.price %></h4>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

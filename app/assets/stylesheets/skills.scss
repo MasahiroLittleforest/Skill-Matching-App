@@ -1,6 +1,9 @@
 .btn {
+  &.skill-submit,
+  &.skill-back,
   &.skill-edit,
-  &.skill-edit-cancel {
+  &.skill-edit-cancel,
+  &.skill-update {
     font-size: 20px;
     border-radius: 30px;
     height: 60px;

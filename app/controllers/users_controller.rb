@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destory
     flash[:success] = 'ユーザーを削除しました。'
-    redirect_to root_url
+    redirect_to authenticated_root_url
   end
 
   def followings
@@ -51,6 +51,7 @@ class UsersController < ApplicationController
       :first_name,
       :middle_name,
       :last_name,
+      :real_name,
       :birthday,
       :bio,
       :image,
