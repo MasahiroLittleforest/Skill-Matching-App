@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'user_links/show'
-  get 'user_links/new'
-  get 'user_links/create'
-  get 'user_links/edit'
-  get 'user_links/update'
-  get 'user_links/destroy'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -38,4 +32,5 @@ Rails.application.routes.draw do
   resources :certifications, only: %i[show new create edit update destroy]
   resources :lessons
   resources :user_links, only: %i[show new create edit update destroy]
+  resources :private_infos, only: %i[show new create edit update destroy]
 end

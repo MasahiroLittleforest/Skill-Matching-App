@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>PrivateInfos#show</h1>
+  
+  <h4>Id: <%= @private_info.id %></h4>
+  <h4>User: <%= link_to @private_info.user.user_name, @private_info.user %></h4>
+  <h4>Real Name: <%= @private_info.real_name_is_open %></h4>
+  <h4>Email: <%= @private_info.email_is_open %></h4>
+  <h4>Age: <%= @private_info.age_is_open %></h4>
+  <h4>Birthday: <%= @private_info.birthday_is_open %></h4>
+  <h4>Gender: <%= @private_info.gender_is_open %></h4>
+  <h4>Profession: <%= @private_info.profession_is_open %></h4>
+
+  <div class="private_info-show-buttons center">
+    <% if @private_info.user == current_user %>
+      <%= link_to 'Edit', edit_private_info_path(@private_info), class: "waves-effect waves-dark btn private_info-edit amber lighten-2 black-text" %>
+    <% end %>
+  </div>
+</div>
+

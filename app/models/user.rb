@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_one :student, dependent: :destroy
   has_one :teacher, dependent: :destroy
+  has_one :private_info, dependent: :destroy
 
   has_many :user_relationships, dependent: :destroy
   has_many :followings, through: :user_relationships, source: :follow, dependent: :destroy

@@ -15,14 +15,30 @@
 
   <div class="user-info">
     <h2><%= @user.user_name %></h2>
-    <h5>本名: <%= @user.full_name %></h5>
-    <% if @user == current_user %>
+    <% if @user.private_info.real_name_is_open %>
+      <h5>本名: <%= @user.full_name %></h5>
+    <% end %>
+
+    <% if @user.private_info.email_is_open %>
       <h5>メールアドレス: <%= @user.email %></h5>
     <% end %>
-    <h5>年齢: <%= @user.age if @user.birthday? %></h5>
-    <h5>生年月日: <%= @user.birthday %></h5>
-    <h5>性別: <%= @user.gender_i18n %></h5>
-    <h5>職業: <%= @user.profession %></h5>
+
+    <% if @user.private_info.age_is_open %>
+      <h5>年齢: <%= @user.age if @user.birthday? %></h5>
+    <% end %>
+
+    <% if @user.private_info.birthday_is_open %>
+      <h5>生年月日: <%= @user.birthday %></h5>
+    <% end %>
+
+    <% if @user.private_info.gender_is_open %>
+      <h5>性別: <%= @user.gender_i18n %></h5>
+    <% end %>
+    
+    <% if @user.private_info.profession_is_open %>
+      <h5>職業: <%= @user.profession %></h5>
+    <% end %>
+    
     <h5>自己紹介: <%= @user.bio %></h5>
     <h5><%= link_to ('フォロー: ' + @user.followings.count.to_s), followings_user_path(@user) %></h5>
     <h5><%= link_to ('フォロワー: ' + @user.followers.count.to_s), followers_user_path(@user) %></h5>
@@ -145,7 +161,7 @@
   <div class="user_links">
     <% if @user == current_user %>
       <div class="right">
-        <%= link_to 'Add Lessons', new_user_link_path, class: "waves-effect waves-dark btn add-user_links" %>
+        <%= link_to 'Add Socials & Links', new_user_link_path, class: "waves-effect waves-dark btn add-user_links" %>
       </div> 
     <% end %>
 
@@ -160,7 +176,6 @@
         <% @user.user_links.each do |user_link| %>
           <tr>
             <td><%= link_to user_link.name, user_link_path(user_link) %></td>
-            <td><%= user_link.name %></td>
             <td><%= user_link.url %></td>
           </tr>
         <% end %>

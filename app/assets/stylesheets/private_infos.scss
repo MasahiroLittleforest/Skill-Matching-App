@@ -1,0 +1,14 @@
+.btn {
+  &.private_info-submit,
+  &.private_info-back,
+  &.private_info-edit,
+  &.private_info-edit-cancel,
+  &.private_info-update {
+    font-size: 20px;
+    border-radius: 30px;
+    height: 60px;
+    width: 150px;
+    line-height: 60px;
+    margin: 0 60px;
+  }
+}

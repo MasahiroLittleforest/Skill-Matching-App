@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_141627) do
+ActiveRecord::Schema.define(version: 2019_07_25_083508) do
 
   create_table "applikations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "student_id"
@@ -82,6 +82,19 @@ ActiveRecord::Schema.define(version: 2019_07_24_141627) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "private_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.boolean "real_name_is_open", default: false
+    t.boolean "email_is_open", default: false
+    t.boolean "age_is_open", default: false
+    t.boolean "birthday_is_open", default: false
+    t.boolean "gender_is_open", default: false
+    t.boolean "profession_is_open", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_private_infos_on_user_id"
   end
 
   create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -202,6 +215,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_141627) do
   add_foreign_key "lessons", "users"
   add_foreign_key "matches", "students"
   add_foreign_key "matches", "teachers"
+  add_foreign_key "private_infos", "users"
   add_foreign_key "skills", "users"
   add_foreign_key "students", "users"
   add_foreign_key "students_preferences", "students"
