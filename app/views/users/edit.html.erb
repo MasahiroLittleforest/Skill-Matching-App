@@ -1,14 +1,20 @@
 <div class="container">
   <h1>ユーザー編集</h1>
+
+  <div class="user-edit-icon z-depth-3">
+    <% if @user.image? %>
+      <%= image_tag @user.image.url, class: "user-edit-icon-image responsive-img" %>
+    <% else %>
+      <img src="/assets/icons8-user-96.png" alt="user-icon">
+    <% end %>
+  </div>
+
   <div class="row">
     <%= form_for(@user) do |f| %>
       <div class="file-field input-field col s12">
         <div class="btn">
           <%= f.file_field :image, accept: (@user.image.accept_extensions) %>
           <%= f.label :image, class: "white-text" %>
-        </div>
-        <div class="file-path-wrapper">
-          <%= f.text_field :image, accept: (@user.image.accept_extensions), class: "file-path validate" %>
         </div>
       </div>
 
