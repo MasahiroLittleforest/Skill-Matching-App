@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_083508) do
+ActiveRecord::Schema.define(version: 2019_07_31_153820) do
 
   create_table "applikations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "student_id"
@@ -86,12 +86,12 @@ ActiveRecord::Schema.define(version: 2019_07_25_083508) do
 
   create_table "private_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.boolean "real_name_is_open", default: false
-    t.boolean "email_is_open", default: false
-    t.boolean "age_is_open", default: false
-    t.boolean "birthday_is_open", default: false
-    t.boolean "gender_is_open", default: false
-    t.boolean "profession_is_open", default: false
+    t.boolean "real_name_is_open", default: false, null: false
+    t.boolean "email_is_open", default: false, null: false
+    t.boolean "age_is_open", default: false, null: false
+    t.boolean "birthday_is_open", default: false, null: false
+    t.boolean "gender_is_open", default: false, null: false
+    t.boolean "profession_is_open", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_private_infos_on_user_id"

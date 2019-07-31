@@ -8,6 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     super
     @student = Student.new
+    @private_info
   end
 
   # POST /resource
@@ -15,6 +16,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
     @student = @user.build_student
     @student.save!
+    @private_info = @user.build_private_info
+    @private_info.save!
   end
 
   # GET /resource/edit

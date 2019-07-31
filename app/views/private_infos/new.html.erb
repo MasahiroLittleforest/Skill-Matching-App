@@ -1,4 +1,57 @@
 <div class="container">
   <h1>PrivateInfos#new</h1>
+
+  <div class="open-info-settings">
+    <%= form_for(@private_info) do |f| %>
+      <div class="input-field col s12">
+        <%= f.text_field :real_name_is_open, class: "validate" %>
+        <%= f.label :real_name_is_open %>
+      </div>
+
+      <div class="switch age">
+        年齢:
+        <label>
+          非公開
+          <input type="checkbox">
+          <span class="lever"></span>
+          公開
+        </label>
+      </div>
+
+      <div class="switch age">
+        性別:
+        <label>
+          非公開
+          <input type="checkbox">
+          <span class="lever"></span>
+          公開
+        </label>
+      </div>
+
+      <div class="switch age">
+        職業:
+        <label>
+          非公開
+          <input type="checkbox">
+          <span class="lever"></span>
+          公開
+        </label>
+      </div>
+
+      <div class="switch age">
+        メールアドレス:
+        <label>
+          非公開
+          <input type="checkbox">
+          <span class="lever"></span>
+          公開
+        </label>
+      </div>
+      
+      <div class="private_info-edit-buttons center">
+        <%= f.submit 'Submit', class: "waves-effect waves-dark btn private_info-submit amber lighten-2 black-text" %>
+      </div>
+    <% end %>
+  </div>
 </div>
 

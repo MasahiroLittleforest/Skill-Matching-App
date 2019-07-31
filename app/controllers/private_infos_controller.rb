@@ -10,7 +10,7 @@ class PrivateInfosController < ApplicationController
   end
 
   def create
-    @private_info = current_user.private_info.build(private_info_params)
+    @private_info = current_user.build_private_info(private_info_params)
     if @private_info.save
       redirect_to @private_info
     else
