@@ -18,6 +18,13 @@
         </div>
       </div>
 
+      <%# this is not working %>
+      <div class="col s12">
+        <%= f.check_box :remove_image, id: 'user_remove_image', class: 'filled-in' %>
+        <%= f.label :remove_image, '画像を削除する' %>
+      </div>
+      <%# ------------------- %>
+
       <div class="input-field col s12">
         <%= f.text_field :user_name, class: "validate" %>
         <%= f.label :user_name %>

@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  validates :email, presence: true, length: { maximum: 255 },
-                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
-                    uniqueness: { case_sensitive: false }
-
   has_one :student, dependent: :destroy
   has_one :teacher, dependent: :destroy
   has_one :private_info, dependent: :destroy
@@ -21,8 +17,11 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :validatable,
          :confirmable,
          :omniauthable, omniauth_providers: %i[facebook twitter google_oauth2]
 
