@@ -1,0 +1,75 @@
+<div class="container">
+  <h1>ユーザー編集</h1>
+
+  <div class="student-edit-icon z-depth-3">
+    <% if @student.user.image? %>
+      <%= image_tag @student.user.image.url, class: "student-edit-icon-image responsive-img" %>
+    <% else %>
+      <img src="/assets/icons8-user-96.png" alt="student-icon">
+    <% end %>
+  </div>
+
+  <div class="row">
+    <%= form_for(@student.user) do |f| %>
+      <div class="file-field input-field col s12">
+        <div class="btn">
+          <%= f.file_field :image, accept: (@student.user.image.accept_extensions) %>
+          <%= f.label :image, class: "white-text" %>
+        </div>
+      </div>
+
+      <%# this is not working %>
+      <div class="col s12">
+        <%= f.check_box :remove_image, id: 'user_remove_image', class: 'filled-in' %>
+        <%= f.label :remove_image, '画像を削除する' %>
+      </div>
+      <%# ------------------- %>
+
+      <div class="input-field col s12">
+        <%= f.text_field :user_name, class: "validate" %>
+        <%= f.label :user_name %>
+      </div>
+
+      <div class="input-field col s4">
+        <%= f.text_field :first_name, class: "validate" %>
+        <%= f.label :first_name %>
+      </div>
+
+      <div class="input-field col s4">
+        <%= f.text_field :middle_name, class: "validate" %>
+        <%= f.label :middle_name %>
+      </div>
+
+      <div class="input-field col s4">
+        <%= f.text_field :last_name, class: "validate" %>
+        <%= f.label :last_name %>
+      </div>
+
+      <div class="input-field col s12">
+        <%= f.text_field :birthday, class: "datepicker" %>
+        <%= f.label :birthday %>
+      </div>
+
+      <div class="input-field col s12">
+        <%= f.select :gender, User.genders.keys.map{ |k| [I18n.t("enums.user.gender.#{k}"), k] } %>
+        <%= f.label :gender %>
+      </div>
+
+      <div class="input-field col s12">
+        <%= f.text_field :profession, class: "validate" %>
+        <%= f.label :profession %>
+      </div>
+
+      <div class="input-field col s12">
+        <%= f.text_area :bio, class: "materialize-textarea" %>
+        <%= f.label :bio, 'Bio' %>
+      </div>
+
+      <div class="student-edit-buttons center">
+        <%= link_to 'Cancel', user_path(@student.user), class: "waves-effect waves-dark btn cancel amber lighten-5 black-text" %>
+        <%= f.submit 'Update', class: "waves-effect waves-dark btn submit amber lighten-2 black-text" %>
+        <%= link_to 'Delete', user_path(@student.user), method: :delete, data: { confirm: "You sure?" } %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     end
   end
   resources :user_relationships, only: %i[create destroy]
+  resources :students, only: %i[show edit update destroy]
   resources :teachers, only: %i[show create edit update destroy]
   resources :teacher_activations, only: [:create]
   resources :skills, only: %i[show new create edit update destroy]

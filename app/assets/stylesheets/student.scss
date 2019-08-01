@@ -1,11 +1,11 @@
-.teacher-page-header {
+.student-page-header {
   height: 300px;
   width: 100%;
   position: relative;
   margin-top: -12px;
 }
 
-.teacher-icon {
+.student-icon {
   height: 250px;
   width: 250px;
   border: 3px solid #ffd54f;
@@ -17,7 +17,7 @@
   img {
     height: 240px;
   }
-  .teacher-icon-image {
+  .student-icon-image {
     max-width: 100%;
     width: auto;
     max-height: 100%;
@@ -25,7 +25,7 @@
     border-radius: 15%;
   }
 }
-.teacher-edit-icon {
+.student-edit-icon {
   height: 250px;
   width: 250px;
   border: 3px solid #ffd54f;
@@ -34,7 +34,7 @@
   img {
     height: 240px;
   }
-  .teacher-edit-icon-image {
+  .student-edit-icon-image {
     max-width: 100%;
     width: auto;
     max-height: 100%;
@@ -43,7 +43,7 @@
   }
 }
 
-.teacher-info {
+.student-info {
   margin-top: 100px;
   h5 {
     color: gray;
@@ -63,7 +63,7 @@
     top: 34%;
     left: 68%;
   }
-  &.teacher-edit {
+  &.student-edit {
     font-size: 20px;
     border-radius: 30px;
     height: 60px;

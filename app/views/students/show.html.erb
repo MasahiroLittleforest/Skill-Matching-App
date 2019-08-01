@@ -1,55 +1,55 @@
 <div class="container">
-  <div class="teacher-page-header amber lighten-2"></div>
+  <div class="student-page-header amber lighten-2"></div>
 
-  <div class="teacher-icon z-depth-3">
-    <% if @user.image? %>
-      <%= image_tag @user.image.url, class: "teacher-icon-image responsive-img" %>
+  <div class="student-icon z-depth-3">
+    <% if @student.user.image? %>
+      <%= image_tag @student.user.image.url, class: "student-icon-image responsive-img" %>
     <% else %>
-      <img src="/assets/icons8-user-96.png" alt="teacher-icon">
+      <img src="/assets/icons8-user-96.png" alt="student-icon">
     <% end %>
   </div>
 
-  <% if @user == current_user %>
-    <%= link_to 'Edit', edit_user_path(@user), class: "waves-effect waves-dark btn teacher-edit" %>
+  <% if @student.user == current_user %>
+    <%= link_to 'Edit', edit_user_path(@student.user), class: "waves-effect waves-dark btn student-edit" %>
   <% end %>
 
-  <div class="teacher-info">
-    <h2><%= @user.user_name %></h2>
-    <% if @user.private_info.real_name_is_open %>
-      <h5>本名: <%= @user.full_name %></h5>
+  <div class="student-info">
+    <h2><%= @student.user.user_name %></h2>
+    <% if @student.user.private_info.real_name_is_open %>
+      <h5>本名: <%= @student.user.full_name %></h5>
     <% end %>
 
-    <% if @user.private_info.email_is_open %>
-      <h5>メールアドレス: <%= @user.email %></h5>
+    <% if @student.user.private_info.email_is_open %>
+      <h5>メールアドレス: <%= @student.user.email %></h5>
     <% end %>
 
-    <% if @user.private_info.age_is_open %>
-      <h5>年齢: <%= @user.age if @user.birthday? %></h5>
+    <% if @student.user.private_info.age_is_open %>
+      <h5>年齢: <%= @student.user.age if @student.user.birthday? %></h5>
     <% end %>
 
-    <% if @user.private_info.birthday_is_open %>
-      <h5>生年月日: <%= @user.birthday %></h5>
+    <% if @student.user.private_info.birthday_is_open %>
+      <h5>生年月日: <%= @student.user.birthday %></h5>
     <% end %>
 
-    <% if @user.private_info.gender_is_open %>
-      <h5>性別: <%= @user.gender_i18n %></h5>
+    <% if @student.user.private_info.gender_is_open %>
+      <h5>性別: <%= @student.user.gender_i18n %></h5>
     <% end %>
     
-    <% if @user.private_info.profession_is_open %>
-      <h5>職業: <%= @user.profession %></h5>
+    <% if @student.user.private_info.profession_is_open %>
+      <h5>職業: <%= @student.user.profession %></h5>
     <% end %>
     
-    <h5>自己紹介: <%= @user.bio %></h5>
-    <h5><%= link_to ('フォロー: ' + @user.followings.count.to_s), followings_user_path(@user) %></h5>
-    <h5><%= link_to ('フォロワー: ' + @user.followers.count.to_s), followers_user_path(@user) %></h5>
+    <h5>自己紹介: <%= @student.user.bio %></h5>
+    <h5><%= link_to ('フォロー: ' + @student.user.followings.count.to_s), followings_user_path(@student.user) %></h5>
+    <h5><%= link_to ('フォロワー: ' + @student.user.followers.count.to_s), followers_user_path(@student.user) %></h5>
   </div>
 
-  <% if @user != current_user %>
-    <%= render 'user_relationships/follow_unfollow_button', user: @user %>
+  <% if @student.user != current_user %>
+    <%= render 'user_relationships/follow_unfollow_button', user: @student.user %>
   <% end %>
 
   <div class="skills">
-    <% if @user == current_user %>
+    <% if @student.user == current_user %>
       <div class="right">
         <%= link_to 'Add Skills', new_skill_path, class: "waves-effect waves-dark btn add-skills" %>
       </div>
@@ -64,7 +64,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @user.skills.each do |skill| %>
+        <% @student.user.skills.each do |skill| %>
           <tr>
             <td><%= link_to skill.name, skill_path(skill) %></td>
             <td><%= skill.level %></td>
@@ -76,7 +76,7 @@
   </div>
   
   <div class="experiences">
-    <% if @user == current_user %>
+    <% if @student.user == current_user %>
       <div class="right">
         <%= link_to 'Add Experiences', new_experience_path, class: "waves-effect waves-dark btn add-experiences" %>
       </div>
@@ -91,7 +91,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @user.experiences.each do |experience| %>
+        <% @student.user.experiences.each do |experience| %>
           <tr>
             <td><%= link_to experience.title, experience_path(experience) %></td>
             <td><%= experience.description %></td>
@@ -103,7 +103,7 @@
   </div>
   
   <div class="certifications">
-    <% if @user == current_user %>
+    <% if @student.user == current_user %>
       <div class="right">
         <%= link_to 'Add Certifications', new_certification_path, class: "waves-effect waves-dark btn add-certifications" %>
       </div> 
@@ -117,7 +117,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @user.certifications.each do |certification| %>
+        <% @student.user.certifications.each do |certification| %>
           <tr>
             <td><%= link_to certification.name, certification_path(certification) %></td>
             <td><%= certification.date_of_acquisition %></td>
@@ -128,7 +128,7 @@
   </div>
 
   <div class="lessons">
-    <% if @user == current_user %>
+    <% if @student.user == current_user %>
       <div class="right">
         <%= link_to 'Add Lessons', new_lesson_path, class: "waves-effect waves-dark btn add-lessons" %>
       </div> 
@@ -145,7 +145,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @user.lessons.each do |lesson| %>
+        <% @student.user.lessons.each do |lesson| %>
           <tr>
             <td><%= link_to lesson.name, lesson_path(lesson) %></td>
             <td><%= lesson.description %></td>
@@ -159,7 +159,7 @@
   </div>
 
   <div class="user_links">
-    <% if @user == current_user %>
+    <% if @student.user == current_user %>
       <div class="right">
         <%= link_to 'Add Socials & Links', new_user_link_path, class: "waves-effect waves-dark btn add-user_links" %>
       </div> 
@@ -173,7 +173,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @user.user_links.each do |user_link| %>
+        <% @student.user.user_links.each do |user_link| %>
           <tr>
             <td><%= link_to user_link.name, user_link_path(user_link) %></td>
             <td><%= user_link.url %></td>
@@ -182,4 +182,10 @@
       </tbody>
     </table>
   </div>
+
+<% if false %>
+  <% if @student.user == current_user %>
+    <%= link_to 'Activate Teacher Account', teachers_create_path, class: "waves-effect waves-dark btn activate-teacher-account red black-text" %>
+  <% end %>
+<% end %>
 </div>
