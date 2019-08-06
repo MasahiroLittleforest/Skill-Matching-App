@@ -1,0 +1,17 @@
+.card {
+  &.message {
+    position: absolute;
+    top: 10%;
+    left: 16%;
+    width: 68%;
+    z-index: 10;
+  }
+  .icon_style {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer; 
+  }
+}

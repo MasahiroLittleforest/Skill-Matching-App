@@ -20,6 +20,7 @@ var today = new Date();
 var currentYear = today.getFullYear();
 
 
+
 $(document).ready(function(){
   $('.sidenav').sidenav();
   $('.modal').modal();
@@ -29,4 +30,7 @@ $(document).ready(function(){
     yearRange: [1950, currentYear]
   });
   $('.timepicker').timepicker();
+  $('#alert_close').click(function(){
+    $("#alert_box").fadeOut("slow", function() {});
+  });
 });
