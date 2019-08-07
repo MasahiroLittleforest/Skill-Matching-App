@@ -8,7 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     super
     @student = Student.new
-    @private_info
+    @private_info = PrivateInfo.new
   end
 
   # POST /resource

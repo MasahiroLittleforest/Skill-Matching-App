@@ -66,7 +66,7 @@
       </div>
 
       <div class="student-edit-buttons center">
-        <%= link_to 'Cancel', user_path(@student.user), class: "waves-effect waves-dark btn cancel amber lighten-5 black-text" %>
+        <%= link_to 'Cancel', student_path(@student), class: "waves-effect waves-dark btn cancel amber lighten-5 black-text" %>
         <%= f.submit 'Update', class: "waves-effect waves-dark btn submit amber lighten-2 black-text" %>
         <%= link_to 'Delete', user_path(@student.user), method: :delete, data: { confirm: "You sure?" } %>
       </div>

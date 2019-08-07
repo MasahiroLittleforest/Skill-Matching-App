@@ -29,18 +29,19 @@
         window[a].started=function(){return false};
       })(0,'https://static.asayer.io/asayer.js','asayer',341,1);
     </script>
+    <!---------------------------------------------------------->
   </head>
 
   <body>
     <%= render 'layouts/navbar' %>
 
-    <div class="container red lighten-5 z-depth-1">
+    <div class="container amber lighten-5 z-depth-1 center">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
     
     <%= yield %>
-    
+
     <%= render 'layouts/log_out_modal' %>
     <%= render 'layouts/footer' %>
     
